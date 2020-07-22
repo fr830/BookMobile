@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BookClient;assembly=BookClient"
+             x:Class="BookClient.Pages.MainPage" x:Name="ThePage" 
+             Title="Library Books" Padding="0,40,0,0">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <Style x:Key="baseLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="22" />
+            </Style>
+
+            <Style x:Key="infoLabelStyle" BasedOn="{StaticResource baseLabelStyle}" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <OnPlatform  x:Key="FontAwesomeRegularString" 
+                         x:TypeArguments="x:String"
+                         Android="Fonts/fa-regular-400.ttf#Font Awesome 5 Free Regular"
+                         iOS="Font Awesome 5 Free"
+                         WinPhone="Assets/fa-regular-400.ttf#Font Awesome 5 Free" />
+
+            <OnPlatform  x:Key="FontAwesomeSolidString" 
+                         x:TypeArguments="x:String"
+                         Android="Fonts/fa-solid-900.ttf#Font Awesome 5 Free Solid"
+                         iOS="Font Awesome 5 Free"
+                         WinPhone="Assets/fa-solid-900.ttf#Font Awesome 5 Free" />
+
+            <OnPlatform  x:Key="FontAwesomeBrandString" 
+                         x:TypeArguments="x:String"
+                         Android="Fonts/fa-brands-400.ttf#Font Awesome 5 Free Brand"
+                         iOS="Font Awesome 5 Free"
+                         WinPhone="Assets/fa-brands-400.ttf#Font Awesome 5 Free" />
+
+            <Style x:Key="FontAwesomeRegular" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource FontAwesomeRegularString}" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+            
+            <Style x:Key="FontAwesomeSolid" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource FontAwesomeSolidString}" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+            
+            <Style x:Key="FontAwesomeBrand" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource FontAwesomeBrandString}" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="&#xf1ec;" Clicked="OnSquareRoot" />
+        <ToolbarItem Text="&#xf044;" Clicked="OnBehavior" />
+        <ToolbarItem Text="&#xf197;" Clicked="OnFluent" />
+        <ToolbarItem Text="Add New" Icon="ic_action_new.png" Clicked="OnAddNewBook" />
+        <ToolbarItem Text="Refresh" Icon="ic_autorenew.png" Clicked="OnRefresh" />
+    </ContentPage.ToolbarItems>
+
+    <Grid>
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+            <Button Text="Square Root" Clicked="OnSquareRoot" />
+            <Button Text="Binding" Clicked="OnBinding" />
+            <Button Text="Book List" Clicked="OnBookList" />
+            <Button Text="Refresh" Clicked="OnRefresh" />
+        </StackLayout>    
+        
+        <ListView ItemsSource="{Binding}"
+                  ItemTapped="OnEditBook">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Title}" Detail="{Binding Genre}">
+                        <TextCell.ContextActions>
+                            <MenuItem Clicked="OnDeleteBook"
+                                CommandParameter="{Binding}"
+                                Text="Delete" IsDestructive="True" />
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <!--<StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Padding="20">
+            <Label Text="&#xf1ec;" 
+                   Style="{StaticResource FontAwesomeSolid}"
+                   HeightRequest="100" 
+                   TextColor="Gray" 
+                   HorizontalOptions="Center">
+            </Label>
+        </StackLayout>-->
+
+        <!-- Challenge exercise - add Activity Indicator -->
+        <StackLayout IsVisible="{Binding Source={x:Reference ThePage}, Path=IsBusy}"
+                    HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Padding="20">
+            <Label Text="Loading Data..." TextColor="Gray" HorizontalOptions="Center" />
+            <ActivityIndicator IsRunning="{Binding Source={x:Reference ThePage}, Path=IsBusy}" Color="Accent" >
+            </ActivityIndicator>
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>

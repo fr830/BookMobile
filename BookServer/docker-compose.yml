@@ -1,0 +1,19 @@
+version: "3"
+services:
+    web:
+        build: .
+        image: cogentcoder/bookserver
+        container_name: bookserver
+        # restart: unless-stopped
+        environment:
+            ASPNETCORE_ENVIRONMENT: Production
+            ASPNETCORE_URLS: http://+
+            VIRTUAL_HOST: bookserver.cogentcoder.com
+        expose:
+            - "80"
+        ports:
+           - "5000:80"
+networks:
+    default:
+        external:
+            name: nginx-proxy

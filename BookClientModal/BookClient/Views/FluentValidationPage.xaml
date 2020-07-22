@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BookClient"
+             xmlns:val="clr-namespace:BookClient.Validators"
+             xmlns:model="clr-namespace:BookClient.ViewModels"
+             x:Class="BookClient.Pages.FluentValidationPage" Padding="0,40,0,0">
+    <ContentPage.Content>
+    
+        <StackLayout>
+            <StackLayout.BindingContext>
+                <model:SignUpPageViewModel />
+            </StackLayout.BindingContext>
+            
+            <Label Text="UserName" />
+            <Entry Text="{Binding UserName}"></Entry>
+            <Label Text="Password" />
+            <Entry IsPassword="True" Text="{Binding Password}"></Entry>
+            <Label Text="Confirm Password"></Label>
+            <Entry IsPassword="True" Text="{Binding ConfirmPassword}"></Entry>
+            <Label Text="Email"></Label>
+            <Entry Text="{Binding Email}"></Entry>
+            <Button Text="Submit" Command="{Binding SignUpCommand}"></Button>
+            <Label Text="{Binding ValidationMessage, Mode=TwoWay}" TextColor="{Binding Color, Mode=TwoWay}"></Label>
+    
+            <Button x:Name="finishButton" Text="Finished" />
+        </StackLayout>
+    
+    </ContentPage.Content>
+</ContentPage>     
+    

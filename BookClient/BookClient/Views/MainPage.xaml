@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:BookClient;assembly=BookClient"
+            x:Class="BookClient.Views.MainPage" 
+            Title="SampleTabs" 
+            Padding="0,40,0,0">
+<!--                 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="&#xf1ec;" Clicked="OnSquareRoot" />
+        <ToolbarItem Text="&#xf02e;" Clicked="OnBinding" />
+        <ToolbarItem Text="&#xf044;" Clicked="OnBehavior" />
+        <ToolbarItem Text="&#xf197;" Clicked="OnFluent" />
+        <ToolbarItem Text="&#xf2b9;" Clicked="OnBookList" />
+    </ContentPage.ToolbarItems>
+-->
+            
+<!--            
+    <Grid>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+            <Label Text="&#xf11a;" Style="{StaticResource FontAwesomeRegular}" />
+            <Label Text="&#xf11a;" HeightRequest="100" BackgroundColor="White" TextColor="Black" FontSize="36">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String" 
+                                Android="fa-regular-400.ttf#Font Awesome 5 Free Regular" 
+                                iOS="Font Awesome 5 Free" 
+                                WinPhone="Assets/fa-regular-400.ttf#Font Awesome 5 Free" />
+                </Label.FontFamily>
+            </Label>
+-->
+<!--            
+            <Button Text="&#xf1ec;" WidthRequest="28" HeightRequest="28" Style="{StaticResource FontAwesomeSolid}" Clicked="OnSquareRoot" />
+            <Button Text="&#xf02e;" WidthRequest="28" HeightRequest="28" Style="{StaticResource FontAwesomeSolid}" Clicked="OnBinding" />
+            <Button Text="&#xf044;" WidthRequest="28" HeightRequest="28" Style="{StaticResource FontAwesomeSolid}" Clicked="OnBehavior" />
+            <Button Text="&#xf197;" WidthRequest="28" HeightRequest="28" Style="{StaticResource FontAwesomeSolid}" Clicked="OnFluent" />
+            <Button Text="&#xf2b9;" WidthRequest="28" HeightRequest="28" Style="{StaticResource FontAwesomeSolid}" Clicked="OnBookList" />
+        </StackLayout>    
+-->
+        
+<!--
+        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Padding="20">
+            <Label Text="&#xf1ec;" 
+                   Style="{StaticResource FontAwesomeSolid}"
+                   HeightRequest="100" 
+                   TextColor="Gray" 
+                   HorizontalOptions="Center">
+            </Label>
+        </StackLayout>
+    </Grid>
+-->
+
+
+</TabbedPage>
