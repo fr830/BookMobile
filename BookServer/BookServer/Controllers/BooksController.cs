@@ -26,15 +26,16 @@ namespace BookServer.Controllers
         }
 
         // GET: api/Books/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetBook([FromRoute] string id)
+        [HttpGet("{isbn}")]
+        public async Task<IActionResult> GetBook([FromRoute] string isbn)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var book = await _bookRepo.Find(id);
+            isbn = isbn.ToUpperInvariant();
+            var book = await _bookRepo.Find(isbn);
 
             if (book == null)
             {
@@ -45,22 +46,22 @@ namespace BookServer.Controllers
         }
 
         // PUT: api/Books/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutBook([FromRoute] string id, [FromBody] Book book)
+        [HttpPut("{isbn}")]
+        public async Task<IActionResult> PutBook([FromRoute] string isbn, [FromBody] Book book)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != book.ISBN)
+            if (string.IsNullOrWhiteSpace(book.ISBN))
             {
                 return BadRequest();
             }
 
             //_context.Entry(book).State = EntityState.Modified;
 
-            var updateBook = await _bookRepo.Find(id);
+            var updateBook = await _bookRepo.Find(isbn);
             if (updateBook == null)
             {
                 return NotFound();
@@ -73,7 +74,7 @@ namespace BookServer.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!BookExists(id))
+                if (!BookExists(isbn))
                 {
                     return NotFound();
                 }
@@ -95,6 +96,10 @@ namespace BookServer.Controllers
                 return BadRequest(ModelState);
             }
 
+            if (!string.IsNullOrWhiteSpace(book.ISBN))
+            {
+                return BadRequest();
+            }
 
             try
             {
@@ -114,12 +119,12 @@ namespace BookServer.Controllers
                 }
             }
 
-            return CreatedAtAction("GetBook", new { id = book.ISBN }, book);
+            return CreatedAtAction("GetBook", new { isbn = book.ISBN }, book);
         }
 
         // DELETE: api/Books/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteBook([FromRoute] string id)
+        [HttpDelete("{isbn}")]
+        public async Task<IActionResult> DeleteBook([FromRoute] string isbn)
         {
             if (!ModelState.IsValid)
             {
@@ -127,7 +132,7 @@ namespace BookServer.Controllers
             }
 
             //var book = await _context.Books.FindAsync(id);
-            var book = await _bookRepo.Find(id);
+            var book = await _bookRepo.Find(isbn);
             if (book == null)
             {
                 return NotFound();
@@ -135,16 +140,16 @@ namespace BookServer.Controllers
 
             //_context.Books.Remove(book);
             //await _context.SaveChangesAsync();
-            await _bookRepo.Remove(id);
+            await _bookRepo.Remove(isbn);
 
             return Ok(book);
         }
 
-        private bool BookExists(string id)
+        private bool BookExists(string isbn)
         {
-            var book = _bookRepo.Find(id);
-            return book != null;
+            var book = _bookRepo.Find(isbn);
             //return _context.Books.Any(e => e.Isbn == id);
+            return book != null;
         }
     }
 }

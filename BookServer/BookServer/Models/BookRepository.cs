@@ -27,16 +27,14 @@ namespace BookServer.Models
             return await _context.Book.ToListAsync();
         }
 
-        public async Task<Book> Find(string key)
+        public async Task<Book> Find(string isbn)
         {
-            return await _context.Book
-                .Where(e => e.ISBN.Equals(key))
-                .SingleOrDefaultAsync();
+            return await _context.Book.SingleOrDefaultAsync(x => x.ISBN == isbn);
         }
 
         public async Task Remove(string isbn)
         {
-            var itemToRemove = await _context.Book.SingleOrDefaultAsync(r => r.ISBN == isbn);
+            var itemToRemove = await _context.Book.SingleOrDefaultAsync(x => x.ISBN == isbn);
             if (itemToRemove != null)
             {
                 _context.Book.Remove(itemToRemove);
@@ -46,7 +44,7 @@ namespace BookServer.Models
 
         public async Task Update(Book item)
         {
-            var itemToUpdate = await _context.Book.SingleOrDefaultAsync(r => r.ISBN == item.ISBN);
+            var itemToUpdate = await _context.Book.SingleOrDefaultAsync(x => x.ISBN == item.ISBN);
             if (itemToUpdate != null)
             {
                 itemToUpdate.Title = item.Title;
@@ -69,10 +67,8 @@ namespace BookServer.Models
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
     }
 }

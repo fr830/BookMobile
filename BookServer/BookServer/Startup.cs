@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using BookServer.Models;
 using BookServer.Middleware;
 using BookServer.Utilities;
@@ -20,8 +21,6 @@ namespace BookServer
     // https://jonhilton.net/2017/10/11/secure-your-asp.net-core-2.0-api-part-1---issuing-a-jwt/
     public class Startup
     {
-        private const string PASSPHRASE = "3wRM6wUSAZzshceh";
-
         public IConfiguration Configuration { get; }
         public IHostingEnvironment CurrentEnvironment { get; }
 
@@ -54,6 +53,9 @@ namespace BookServer
         public void ConfigureServices(IServiceCollection services)
         {
             string connDefault = string.Empty;
+            string passPhrase = string.Empty;
+
+            passPhrase = Configuration.GetConnectionString("PassPhrase");  // appsettings.Environment.json
 
             if (CurrentEnvironment.IsDevelopment())
             {
@@ -61,13 +63,18 @@ namespace BookServer
             }
             else
             {
-                string encryptedDefault = Configuration.GetConnectionString("DefaultConnection");
-                connDefault = Encryptor.DecryptString(encryptedDefault, PASSPHRASE);
+                string connDefaultEncrypted = Configuration.GetConnectionString("DefaultConnection");
+                passPhrase = Configuration.GetConnectionString("PassPhrase");
+                // passPhrase = Configuration["PassPhrase"];  // Environment variable
+                connDefault = Encryptor.DecryptString(connDefaultEncrypted, passPhrase);
             }
+
+            // string connProduction = connDefault = Configuration.GetConnectionString("DefaultProduction");
+            // Console.WriteLine("connProduction: " + Encryptor.EncryptString(connProduction, passPhrase));
 
             services.AddDbContext<BookContext>(options => options.UseSqlServer(connDefault));
 
-            // Add framework
+            // Add MVC framework
             services.AddMvc()
                 .AddJsonOptions(a => a.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver())
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_0);
