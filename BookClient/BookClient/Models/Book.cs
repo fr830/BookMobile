@@ -9,8 +9,7 @@ using System.Runtime.CompilerServices;
 
 namespace BookClient.Models
 {
-    // The model represents the domain model which includes
-    // a data model along with business and validation logic.
+    // The model represents the domain model which includes a data model along with business and validation logic.
     [DebuggerDisplay("Book: {Title} {Genre}")]
     public class Book : INotifyPropertyChanged
     {
