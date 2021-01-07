@@ -18,13 +18,12 @@ namespace BookClient.Views
     // https://www.c-sharpcorner.com/article/input-validation-in-xamarin-forms-behaviors/
     // Xamarin Forms Triggers vs Behaviors vs Effects
     // https://xamarinhelp.com/xamarin-forms-triggers-behaviors-effects/
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SquareRootPage : ContentPage
-	{
+    public partial class SquareRootPage : ContentPage
+    {
         readonly SquareRootViewModel _viewModel;
 
-        public SquareRootPage ()
-		{
+        public SquareRootPage()
+        {
             //_viewModel = new SquareRootViewModel();
             //BindingContext = _viewModel;
             InitializeComponent();

@@ -7,7 +7,7 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
              Title="Behavior"
-             Icon="Run.png"
+             IconImageSource="Run.png"
              Padding="0,40,0,0">
     <ContentPage.Content>
         <StackLayout Spacing="0">

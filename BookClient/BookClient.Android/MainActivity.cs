@@ -1,11 +1,16 @@
 ﻿using System;
 
 using Android.App;
+using Android.Content;
 using Android.Content.PM;
-using Android.Runtime;
+using Android.OS;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
-using Android.OS;
+
+using Android.Graphics;
+using Java.Lang;
+using Java.Lang.Reflect;
 
 namespace BookClient.Droid
 {
@@ -14,9 +19,10 @@ namespace BookClient.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(bundle);
+            global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity.ToolbarResource = Resource.Layout.Toolbar;
+            global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity.TabLayoutResource = Resource.Layout.Tabbar;
 
-            LayoutInflater.Factory = new CustomLayoutInflaterFactory();
+            base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
@@ -25,6 +31,6 @@ namespace BookClient.Droid
             //SettingsLoader.Loader = new StreamLoader(this);
             //var data = await SettingsLoader.ImprovedLoadAsync();
         }
-    }
+	}
 }
 

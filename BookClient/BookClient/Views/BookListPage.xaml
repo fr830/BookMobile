@@ -6,7 +6,7 @@
              x:Name="ThePage"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
-             Icon="Contacts.png"
+             IconImageSource="Contacts.png"
              Title="BookList" 
              Padding="0,40,0,0">
                               

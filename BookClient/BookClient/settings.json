@@ -1,3 +1,4 @@
 {
-  "SiteUrl": "http://xam150.azurewebsites.net/api/books/"
+  "SiteUrl": "https://bookserver.cogentcoder.com/api/books",
+  "AuthKey": "28236d8ec201df516d0f6472d516d72b"
 }

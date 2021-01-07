@@ -12,7 +12,7 @@ namespace BookClient.iOS
         // This is the main entry point of the application.
         static void Main(string[] args)
         {
-            // If you want to use a different Application Delegate class from "AppDelegate"
+            // If you want to use a different Application Delegate class
             // you can specify it here.
             UIApplication.Main(args, null, "AppDelegate");
         }

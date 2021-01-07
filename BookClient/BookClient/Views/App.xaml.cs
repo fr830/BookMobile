@@ -6,7 +6,6 @@ using BookClient.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace BookClient
 {
     public partial class App : Application
@@ -22,7 +21,7 @@ namespace BookClient
             // Load resources
             InitializeComponent();
 
-            Mapper.Initialize(cfg => cfg.AddProfile(new AutoMapperConfig()));
+            // Mapper.Initialize(cfg => cfg.AddProfile(new AutoMapperConfig()));
 
             // The root page of your application
             MainPage = new NavigationPage(new MainPage());

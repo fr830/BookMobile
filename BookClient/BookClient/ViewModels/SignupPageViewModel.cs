@@ -76,22 +76,22 @@ namespace BookClient.ViewModels
                 Email = _email
             };
 
-            var validationResult = _validator.Validate(this.User);
-            if (validationResult.IsValid)
-            {
-                this.ValidationMessage = "Validation Success!!";
-                this.Color = "Green";
-            }
-            else
-            {
-                this.ValidationMessage = string.Empty;
-                foreach (var error in validationResult.Errors)
-                {
-                    this.ValidationMessage += error.ErrorMessage + "\n";
-                    this.Color = "Red";
-                }
-                App.Current.MainPage.DisplayAlert("FluentValidation: ", this.ValidationMessage, "Ok");
-            }
+            // var validationResult = _validator.Validate(this.User);
+            // if (validationResult.IsValid)
+            // {
+            //     this.ValidationMessage = "Validation Success!!";
+            //     this.Color = "Green";
+            // }
+            // else
+            // {
+            //     this.ValidationMessage = string.Empty;
+            //     foreach (var error in validationResult.Errors)
+            //     {
+            //         this.ValidationMessage += error.ErrorMessage + "\n";
+            //         this.Color = "Red";
+            //     }
+            //     App.Current.MainPage.DisplayAlert("FluentValidation: ", this.ValidationMessage, "Ok");
+            // }
         }
     }
 }

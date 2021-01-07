@@ -9,12 +9,11 @@ using Xamarin.Forms.Xaml;
 
 namespace BookClient.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class BehaviorPage : ContentPage
 	{
 		public BehaviorPage ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
             //finishButton.Clicked += async (s, e) => await Navigation.PopModalAsync();
         }
     }

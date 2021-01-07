@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using BookClient.Models;
 using BookClient.ViewModels;
-using Plugin.Iconize;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

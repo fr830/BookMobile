@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,13 +19,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="10.0.0" />
-    <PackageReference Include="FluentValidation" Version="9.0.1" />
+    <PackageReference Include="FluentValidation" Version="9.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1179" />
-    <PackageReference Include="Xam.Plugin.Iconize.FontAwesome" Version="3.5.0.129" />
-    <PackageReference Include="Xam.Plugin.Iconize" Version="3.5.0.129" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
   </ItemGroup>
+
+<!--
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\BookListSimplePage.xaml" />
+    <EmbeddedResource Remove="Views\App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\SquareRootPage.xaml.cs" />
+    <Compile Remove="Views\BookListSimplePage.xaml.cs" />
+    <Compile Remove="Views\MainPage.xaml.cs" />
+    <Compile Remove="Views\App.xaml.cs" />
+    <Compile Remove="Views\BookListPage.xaml.cs" />
+  </ItemGroup>
+-->
 
   <ItemGroup>
     <Compile Update="Views\AddEditBookPage.xaml.cs">
@@ -27,6 +46,10 @@
     </Compile>
     <Compile Update="Views\BookListPage.xaml.cs">
       <DependentUpon>BookListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\SquareRootPage.xaml.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>SquareRootPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -46,11 +69,9 @@
     <EmbeddedResource Update="Views\FluentValidationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\SquareRootPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utils\" />
   </ItemGroup>
+
 </Project>

@@ -12,18 +12,19 @@ namespace BookClient.Models
     public class BookManager
     {
         private string authKey;  // authorization key
-        const string url = "http://xam150.azurewebsites.net/api/books/";
+        const string url = "https://bookserver.cogentcoder.com/api/books/";
 
         private async Task<HttpClient> GetClientAsync()
         {
             HttpClient client = new HttpClient();
-            if (string.IsNullOrEmpty(authKey))
-            {
-                authKey = await client.GetStringAsync(App.Settings.SiteUrl + "login");
-                // The key will have quotes around it that need to be removed.
-                authKey = JsonConvert.DeserializeObject<string>(authKey);
-            }
+            //if (string.IsNullOrEmpty(authKey))
+            //{
+            //    authKey = await client.GetStringAsync(App.Settings.SiteUrl + "login");
+            //    // The key will have quotes around it that need to be removed.
+            //    authKey = JsonConvert.DeserializeObject<string>(authKey);
+            //}
 
+            authKey = App.Settings.AuthKey;
             client.DefaultRequestHeaders.Add("Authorization", authKey);
             client.DefaultRequestHeaders.Add("Accept", "application/json");
 
@@ -33,13 +34,13 @@ namespace BookClient.Models
         private HttpClient GetClient()
         {
             HttpClient client = new HttpClient();
-            if (string.IsNullOrEmpty(authKey))
-            {
-                authKey = client.GetStringAsync(App.Settings.SiteUrl + "login").Result;
-                // The key will have quotes around it that need to be removed.
-                authKey = JsonConvert.DeserializeObject<string>(authKey);
-            }
-
+            //if (string.IsNullOrEmpty(authKey))
+            //{
+            //    authKey = client.GetStringAsync(App.Settings.SiteUrl + "login").Result;
+            //    // The key will have quotes around it that need to be removed.
+            //    authKey = JsonConvert.DeserializeObject<string>(authKey);
+            //}
+            authKey = App.Settings.AuthKey;
             client.DefaultRequestHeaders.Add("Authorization", authKey);
             client.DefaultRequestHeaders.Add("Accept", "application/json");
 

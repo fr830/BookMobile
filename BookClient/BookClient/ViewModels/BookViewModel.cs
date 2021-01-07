@@ -13,13 +13,13 @@ using AutoMapper;
 namespace BookClient.ViewModels
 {
     /// <summary>
-    /// The view model implements properties and commands to which the view can bind to, 
+    /// The view model implements properties and commands to which the view can bind to
     /// and notifies the view of any state changes through change notification events.
     /// The properties and commands that the view model provides define the functionality 
     /// to be offered by the UI, but the view determines how that functionality is to be displayed.
     /// Keep the UI responsive with asynchronous operations.
-    /// Use asynchronous methods for I/O operations and raise events to asynchronously 
-    /// notify views of property changes.
+    /// Use asynchronous methods for I/O operations and raise events to
+    /// asynchronously notify views of property changes.
     /// </summary>
     // Model-View-ViewModel (MVVM) Explained
     // https://www.wintellect.com/model-view-viewmodel-mvvm-explained/
@@ -37,13 +37,7 @@ namespace BookClient.ViewModels
     // https://github.com/jbe2277/waf
     public class BookViewModel : ObservableObject
     {
-        #region Backing Fields
-        
         private Book _book;
-
-        #endregion  // Backing Fields
-
-        #region Constructors
 
         public BookViewModel()
         {
@@ -57,11 +51,7 @@ namespace BookClient.ViewModels
             // Map entity model to view model
             //Mapper.Map<Book, BookViewModel>(book, this);
         }
-
-        #endregion  // Constructors
-
-        #region Properties
-
+        
         public Book Book
         {
             get
@@ -76,6 +66,5 @@ namespace BookClient.ViewModels
             }
         }
 
-        #endregion  // Properties
     }
 }

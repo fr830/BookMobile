@@ -7,7 +7,7 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
              Title="Binding"
-             Icon="Bookmark.png"
+             IconImageSource="Bookmark.png"
              Padding="10,40,10,0">
     <ContentPage.Content>
         
