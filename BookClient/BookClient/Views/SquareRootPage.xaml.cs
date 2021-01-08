@@ -26,6 +26,7 @@ namespace BookClient.Views
         {
             //_viewModel = new SquareRootViewModel();
             //BindingContext = _viewModel;
+            this.IconImageSource = "Calculator.png";
             InitializeComponent();
             //finishButton.Clicked += async (s, e) => await Navigation.PopModalAsync();
         }

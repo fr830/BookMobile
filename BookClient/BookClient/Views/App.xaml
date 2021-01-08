@@ -12,7 +12,8 @@
 			<Style x:Key="infoLabelStyle" BasedOn="{StaticResource baseLabelStyle}" TargetType="Label">
 				<Setter Property="FontAttributes" Value="Bold" />
 			</Style>
-
+            
+            <!--
             <OnPlatform  x:Key="FontAwesomeRegularString" 
                          x:TypeArguments="x:String"
                          Android="fa-regular-400.ttf#Font Awesome 5 Free Regular"
@@ -43,11 +44,12 @@
                 <Setter Property="BackgroundColor" Value="White" />
             </Style>
             
-            <Style x:Key="FontAwesomeBrand" TargetType="Button">
+            <Style x:Key="FontAwesomeBrands" TargetType="Button">
                 <Setter Property="FontFamily" Value="{StaticResource FontAwesomeBrandString}" />
                 <Setter Property="FontSize" Value="Medium" />
                 <Setter Property="BackgroundColor" Value="White" />
             </Style>
+            -->
         </ResourceDictionary>
     </Application.Resources>
 	

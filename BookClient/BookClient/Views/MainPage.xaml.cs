@@ -24,7 +24,7 @@ namespace BookClient.Views
             this.Children.Add(new BookListPage());
             //this.Children.Add(new BookListSimplePage());
         }
-
+        
         //async void OnSquareRoot(object sender, EventArgs e)
         //{
         //    await Navigation.PushModalAsync(new SquareRootPage());

@@ -7,8 +7,8 @@
              x:Class="BookClient.Views.SquareRootPage" 
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
+             IconImageSource="Calculator.png"            
              Title="SquareRoot"
-             Icon="Calculator.png"            
              Padding="10,40,10,0">
 
     <!--<ContentPage.BindingContext>
@@ -74,7 +74,17 @@
                     <Label Text="{Binding SimulatedDownloadResult}" />
                 </StackLayout>
 <!--                <Button x:Name="finishButton" Text="Finished" />-->
-            </StackLayout>                        
+            </StackLayout>
+            
+            <Label Padding="0, 12, 0, 0" Text="Fontawesome Demo" FontAttributes="Bold" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="&#xf09a;" FontFamily="FAB" />
+                <Label
+                    x:Name="RefreshLabel"
+                    Text="&#xf2b9;"
+                    FontSize="18"
+                    FontFamily="FAR" />
+            </StackLayout>
         </StackLayout>
 
     </ContentPage.Content>

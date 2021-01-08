@@ -11243,13 +11243,16 @@ namespace BookClient.Droid
 			public const int test_custom_background = 2131165333;
 			
 			// aapt resource value: 0x7F070096
-			public const int tooltip_frame_dark = 2131165334;
+			public const int today = 2131165334;
 			
 			// aapt resource value: 0x7F070097
-			public const int tooltip_frame_light = 2131165335;
+			public const int tooltip_frame_dark = 2131165335;
 			
 			// aapt resource value: 0x7F070098
-			public const int Walk = 2131165336;
+			public const int tooltip_frame_light = 2131165336;
+			
+			// aapt resource value: 0x7F070099
+			public const int Walk = 2131165337;
 			
 			static Drawable()
 			{

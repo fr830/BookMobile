@@ -83,15 +83,6 @@
     <None Include="app.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidAsset Include="Assets\fa-regular-400.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="Assets\fa-brands-400.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="Assets\fa-solid-900.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AndroidAsset>
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -105,7 +96,7 @@
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\Calculator.png">
       <SubType></SubType>
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\Contacts.png">
       <SubType></SubType>
@@ -119,79 +110,10 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
+    <AndroidResource Include="Resources\drawable\today.png">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\drawable\Walk.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-hdpi\Bookmark.png">
-      <SubType></SubType>
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-hdpi\Calculator.png">
-      <SubType></SubType>
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-hdpi\Contacts.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-hdpi\Edit.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-hdpi\Run.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-hdpi\Walk.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xhdpi\Bookmark.png">
-      <SubType></SubType>
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xhdpi\Calculator.png">
-      <SubType></SubType>
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xhdpi\Contacts.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xhdpi\Edit.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xhdpi\Run.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xhdpi\Walk.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xxhdpi\Bookmark.png">
-      <SubType></SubType>
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xxhdpi\Calculator.png">
-      <SubType></SubType>
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xxhdpi\Contacts.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xxhdpi\Edit.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xxhdpi\Run.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xxhdpi\Walk.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
