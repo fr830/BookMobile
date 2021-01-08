@@ -3,12 +3,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:BookClient.ViewModels"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:validators="clr-namespace:BookClient.Validators"
              x:Class="BookClient.Views.SquareRootPage" 
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
              IconImageSource="Calculator.png"            
-             Title="SquareRoot"
              Padding="10,40,10,0">
 
     <!--<ContentPage.BindingContext>
@@ -78,12 +77,12 @@
             
             <Label Padding="0, 12, 0, 0" Text="Fontawesome Demo" FontAttributes="Bold" />
             <StackLayout Orientation="Horizontal">
-                <Label Text="&#xf09a;" FontFamily="FAB" />
+                <Label Text="&#xf09a;" FontFamily="fa-brands" />
                 <Label
                     x:Name="RefreshLabel"
                     Text="&#xf2b9;"
                     FontSize="18"
-                    FontFamily="FAR" />
+                    FontFamily="fa-regular" />
             </StackLayout>
         </StackLayout>
 

@@ -14,6 +14,8 @@ namespace BookClient.Views
 		public BehaviorPage ()
 		{
 			InitializeComponent();
+			this.IconImageSource = new FontImageSource { FontFamily = "fa-solid", Size = 30,  Glyph= "\uf70c", Color = Color.Blue }; 
+			this.Title = string.Empty;
             //finishButton.Clicked += async (s, e) => await Navigation.PopModalAsync();
         }
     }

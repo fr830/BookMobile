@@ -20,6 +20,8 @@ namespace BookClient.Views
 			InitializeComponent ();
             _viewModel = new SignUpPageViewModel();
             BindingContext = _viewModel;
+            this.IconImageSource = new FontImageSource { FontFamily = "fa-solid", Size = 30,  Glyph= "\uf044", Color = Color.Blue }; 
+            this.Title = string.Empty;
         }
     }
 }

@@ -18,7 +18,9 @@ namespace BookClient.Views
 		{
 			InitializeComponent();
             this.BindingContext = CurrentFlag;
-        }
+            this.IconImageSource = new FontImageSource { FontFamily = "fa-solid", Size = 30,  Glyph= "\uf02e", Color = Color.Blue };
+            this.Title = string.Empty;
+		}
 
         // Add support for property change notifications
         // We want to modify the Flag object in some way that is independent of the UI.

@@ -9,6 +9,8 @@ using Android.Views;
 using Android.Widget;
 
 using Android.Graphics;
+using Android.Graphics.Drawables;
+using AndroidX.Core.Content;
 using Java.Lang;
 using Java.Lang.Reflect;
 
@@ -28,6 +30,8 @@ namespace BookClient.Droid
 
             LoadApplication(new App());
 
+            // this.ActionBar.SetBackgroundDrawable((new ColorDrawable(Color.ParseColor("#FFFFFF"))));
+            
             //SettingsLoader.Loader = new StreamLoader(this);
             //var data = await SettingsLoader.ImprovedLoadAsync();
         }

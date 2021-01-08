@@ -3,13 +3,14 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:BookClient.Views;assembly=BookClient"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             x:Class="BookClient.Views.MainPage" 
-            Title="SampleTabs" 
+            Title="SampleTabs"
             Padding="0,40,0,0">
     
-    <local:SquareRootPage Icon="today.png" />
-    
-    <!--                 
+    <!-- <local:SquareRootPage IconImageSource="today.png" /> -->
+
+    <!--
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="&#xf1ec;" Clicked="OnSquareRoot" />
         <ToolbarItem Text="&#xf02e;" Clicked="OnBinding" />
@@ -17,9 +18,9 @@
         <ToolbarItem Text="&#xf197;" Clicked="OnFluent" />
         <ToolbarItem Text="&#xf2b9;" Clicked="OnBookList" />
     </ContentPage.ToolbarItems>
--->
-            
-<!--            
+    -->
+    
+    <!--            
     <Grid>
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
             <Label Text="&#xf11a;" Style="{StaticResource FontAwesomeRegular}" />
@@ -31,8 +32,6 @@
                                 WinPhone="Assets/fa-regular-400.ttf#Font Awesome 5 Free" />
                 </Label.FontFamily>
             </Label>
--->
-<!--            
             <Button Text="&#xf1ec;" WidthRequest="28" HeightRequest="28" Style="{StaticResource FontAwesomeSolid}" Clicked="OnSquareRoot" />
             <Button Text="&#xf02e;" WidthRequest="28" HeightRequest="28" Style="{StaticResource FontAwesomeSolid}" Clicked="OnBinding" />
             <Button Text="&#xf044;" WidthRequest="28" HeightRequest="28" Style="{StaticResource FontAwesomeSolid}" Clicked="OnBehavior" />

@@ -72,6 +72,8 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtendedTabbedPageRenderer.cs" />
+    <Compile Include="IconDrawable.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,6 +138,11 @@
       <Project>{72F92CA4-0799-4696-A936-8937B53D3881}</Project>
       <Name>BookClient</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\fa-brands-400.ttf" />
+    <AndroidAsset Include="Assets\fa-regular-400.ttf" />
+    <AndroidAsset Include="Assets\fa-solid-900.ttf" />
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

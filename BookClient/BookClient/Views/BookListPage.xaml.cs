@@ -19,6 +19,8 @@ namespace BookClient.Views
             BindingContext = DependencyService.Get<BookListViewModel>();
             _viewModel = DependencyService.Get<BookListViewModel>();
             InitializeComponent();
+            this.IconImageSource = new FontImageSource { FontFamily = "fa-solid", Size = 30,  Glyph= "\uf03a", Color = Color.Blue }; 
+            this.Title = string.Empty;
         }
 
         private async void OnItemTapped(object sender, ItemTappedEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using BookClient.ViewModels;
+using BookClient.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace BookClient.Views
     // https://www.c-sharpcorner.com/article/input-validation-in-xamarin-forms-behaviors/
     // Xamarin Forms Triggers vs Behaviors vs Effects
     // https://xamarinhelp.com/xamarin-forms-triggers-behaviors-effects/
-    public partial class SquareRootPage : ContentPage
+    public partial class SquareRootPage : ContentPage, ICustomImagePage
     {
         readonly SquareRootViewModel _viewModel;
 
@@ -26,9 +27,12 @@ namespace BookClient.Views
         {
             //_viewModel = new SquareRootViewModel();
             //BindingContext = _viewModel;
-            this.IconImageSource = "Calculator.png";
             InitializeComponent();
+            this.IconImageSource = new FontImageSource { FontFamily = "fa-solid", Size = 30,  Glyph= "\uf1ec", Color = Color.Blue };
+            this.Title = string.Empty;
             //finishButton.Clicked += async (s, e) => await Navigation.PopModalAsync();
         }
+
+        public string IconName { get; set; }
     }
 }
