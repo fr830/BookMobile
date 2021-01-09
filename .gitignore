@@ -261,7 +261,10 @@ __pycache__/
 *.pyc
 
 
-# Custom project settings
+# Folders to ignroe
+.idea/
+
+# Files to ignore
 appsettings.Development.json
 appsettings.Production.json
-.idea/
+settings.json
