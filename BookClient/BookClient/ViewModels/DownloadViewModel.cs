@@ -12,56 +12,52 @@ namespace BookClient.ViewModels
     // The following code example shows a sample application command implementation 
     // that simulates a file downloading through an asynchronous method
     // https://blog.xamarin.com/simplifying-events-with-commanding/
-    class DemoViewModel : ObservableObject
+    class DownloadViewModel : ObservableObject
     {
         bool canDownload = true;
         string simulatedDownloadResult;
 
-        public string SimulatedDownloadResult
-        {
-            get { return simulatedDownloadResult; }
-            private set
-            {
-                if (simulatedDownloadResult != value)
-                {
-                    simulatedDownloadResult = value;
-                    OnPropertyChanged("SimulatedDownloadResult");
-                }
-            }
-        }
-
         public ICommand SimulateDownloadCommand { get; private set; }
 
-        public DemoViewModel()
+        public DownloadViewModel()
         {
             SimulateDownloadCommand = new Command(async () => await SimulateDownloadAsync(), () => canDownload);
         }
+        
+        public string SimulatedDownloadResult
+        {
+            get => simulatedDownloadResult;
+            private set
+            {
+                if (simulatedDownloadResult == value) return;
+                simulatedDownloadResult = value;
+                OnPropertyChanged("SimulatedDownloadResult");
+            }
+        }
 
-        async Task SimulateDownloadAsync()
+       private async Task SimulateDownloadAsync()
         {
             CanInitiateNewDownload(false);
             SimulatedDownloadResult = string.Empty;
-            await Task.Run(() => SimulateDownload());
+            await Task.Run(SimulateDownload);
             SimulatedDownloadResult = "Simulated download complete";
             CanInitiateNewDownload(true);
         }
 
-        void CanInitiateNewDownload(bool value)
+       private void CanInitiateNewDownload(bool value)
         {
             canDownload = value;
             ((Command)SimulateDownloadCommand).ChangeCanExecute();
         }
 
-        void SimulateDownload()
+       private static void SimulateDownload()
         {
             // Simulate a 5 second pause
             var endTime = DateTime.Now.AddSeconds(5);
             while (true)
             {
-                if (DateTime.Now >= endTime)
-                {
+                if (DateTime.Now >= endTime)  
                     break;
-                }
             }
         }
     }

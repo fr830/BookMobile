@@ -63,7 +63,7 @@
             <Label Text="Demo 3 - Async Command with CanExecute" FontAttributes="Bold" />
             <StackLayout>
                 <StackLayout.BindingContext>
-                    <model:DemoViewModel />
+                    <model:DownloadViewModel />
                 </StackLayout.BindingContext>
                 <Button Text="Simulate 5 Second Download" 
                     HorizontalOptions="Center"

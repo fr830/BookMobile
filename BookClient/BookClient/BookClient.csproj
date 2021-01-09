@@ -11,11 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="settings.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="settings.json" />
     <None Remove="Fonts\fa-brands-400.ttf" />
     <EmbeddedResource Include="Fonts\fa-brands-400.ttf" />
     <None Remove="Fonts\fa-regular-400.ttf" />
