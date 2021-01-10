@@ -9,8 +9,8 @@ namespace BookClient
 {
 	public static class SettingsLoader
 	{
-        const string Filename = "settings.json";
-        const string ResourceName = "BookClient.settings.json";
+        private const string Filename = "settings.json";
+        private const string ResourceName = "BookClient.settings.json";
 
         public static async Task<Settings> LoadAsync()
         {
@@ -21,7 +21,7 @@ namespace BookClient
             }
         }
 
-        public static IStreamLoader Loader { get; set; }
+        private static IStreamLoader Loader { get; set; }
 
 		private static Stream OpenData()
         {
@@ -45,6 +45,7 @@ namespace BookClient
         public static Settings ImprovedLoad()
         {
             var assembly = typeof(SettingsLoader).GetTypeInfo().Assembly;
+            // var names = assembly.GetManifestResourceNames();
             using (var stream = assembly.GetManifestResourceStream(ResourceName))
             using (var reader = new StreamReader(stream))
             {

@@ -1,9 +1,8 @@
 using System.IO;
-using BookClient;
 
-namespace MyTunes
+namespace BookClient
 {
-    class StreamLoader : IStreamLoader
+    public class StreamLoader : IStreamLoader
     {
         public Stream GetStreamForFilename(string filename)
         {

@@ -265,6 +265,6 @@ __pycache__/
 .idea/
 
 # Files to ignore
-appsettings.Development.json
-appsettings.Production.json
+appsettings.json
+appsettings.*.json
 settings.json

@@ -17,6 +17,8 @@
     <EmbeddedResource Include="Fonts\fa-regular-400.ttf" />
     <None Remove="Fonts\fa-solid-900.ttf" />
     <EmbeddedResource Include="Fonts\fa-solid-900.ttf" />
+    <None Remove="settings.json" />
+    <EmbeddedResource Include="settings.json" />
   </ItemGroup>
 
   <ItemGroup>
