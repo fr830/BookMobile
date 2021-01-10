@@ -1,0 +1,22 @@
+#
+# docker-compose.yml
+#
+version: "3"
+services:
+    web:
+        build: .
+        image: domain/bookserver
+        container_name: bookserver
+        # restart: unless-stopped
+        environment:
+            ASPNETCORE_ENVIRONMENT: Production
+            ASPNETCORE_URLS: http://+
+            VIRTUAL_HOST: domain.com
+        expose:
+            - "80"
+        ports:
+           - "5000:80"
+networks:
+    default:
+        external:
+            name: nginx-proxy
