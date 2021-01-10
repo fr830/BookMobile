@@ -39,7 +39,6 @@ namespace BookServer.Middleware
 
     }
 
-    #region ExtensionMethod
     public static class UserKeyValidatorExtension
     {
         public static IApplicationBuilder ApplyApiKeyValidation(this IApplicationBuilder app)
@@ -47,5 +46,4 @@ namespace BookServer.Middleware
             return app.UseMiddleware<ApiKeyValidatorMiddleware>();
         }
     }
-    #endregion
 }
