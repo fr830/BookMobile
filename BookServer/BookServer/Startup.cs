@@ -125,12 +125,11 @@ namespace BookServer
                 app.UseHsts();
             }
 
-            app.UseMvc();
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
+            app.ApplyApiKeyValidation();
             // app.UseAuthentication();
             // app.UseHttpsRedirection();
-            app.ApplyApiKeyValidation();
+            app.UseMvc();
+            app.UseDefaultFiles();
         }
     }
 }

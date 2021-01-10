@@ -1,19 +1,25 @@
-﻿using BookServer.Models;
+﻿/**
+ * Use ASP.NET Core Middleware to check for API key
+ * Reference:
+ *   ContactsApi
+ *   https://mithunvp.com/create-aspnet-mvc-6-web-api-visual-studio-2017/
+ *   https://github.com/mithunvp/ContactsAPI
+ */
+using BookServer.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
 
 namespace BookServer.Middleware
 {
-    // ContactsApi
-    // https://github.com/mithunvp/ContactsAPI
     public class ApiKeyValidatorMiddleware
     {
         private readonly RequestDelegate _next;
-
-        public ApiKeyValidatorMiddleware(RequestDelegate next)
+        private IBookRepository BookRepo { get; set; }
+        public ApiKeyValidatorMiddleware(RequestDelegate next, IBookRepository repo)
         {
             _next = next;
+            BookRepo = repo;
         }
 
         public async Task Invoke(HttpContext context, IBookRepository repo)
@@ -39,11 +45,13 @@ namespace BookServer.Middleware
 
     }
 
+    // Extension Method
     public static class UserKeyValidatorExtension
     {
         public static IApplicationBuilder ApplyApiKeyValidation(this IApplicationBuilder app)
         {
-            return app.UseMiddleware<ApiKeyValidatorMiddleware>();
+            app.UseMiddleware<ApiKeyValidatorMiddleware>();
+            return app;
         }
     }
 }
