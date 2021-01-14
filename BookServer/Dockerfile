@@ -15,16 +15,8 @@
 
 # docker build -t bookserver .
 
-# http://cogentcoder.com:8000
 # docker run --name bookserver --rm -it -p 8000:80 bookserver
 # docker run --detach --name bookserver -p 8000:80 bookserver
-
-
-# Tried this but did not work
-# Be sure to create DNS record for VIRTUAL_HOST
-# http://bookserver.cogentcoder.com:5000
-# docker run --name bookserver --rm -it -p 5000:80 --expose 5000 --net nginx-proxy -e ASPNETCORE_URLS="http://+" -e VIRTUAL_HOST=bookserver.cogentcoder.com bookserver
-
 
 # --name Assign a name to the container
 # --rm   Automatically remove the container when it exits
@@ -46,7 +38,6 @@
 #     -v ${HOME}/.aspnet/https:/https/ mcr.microsoft.com/dotnet/core/samples:aspnetapp
 
 FROM microsoft/dotnet:sdk AS build
-# FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS build
 WORKDIR /app
 
 # Delete temp files
